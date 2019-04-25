@@ -87,8 +87,13 @@
                 spotLight.castShadow = true;
                 scene.add(spotLight)
 
+                function renderScene(){
+                    requestAnimationFrame(renderScene);
+                    renderer.render(scene, camera);
+                }
+
                 document.getElementById('app').appendChild(renderer.domElement)
-                renderer.render(scene, camera)
+                renderScene();
             }
 
             ,
