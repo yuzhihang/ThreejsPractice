@@ -8,7 +8,7 @@
 <script>
     // import HelloWorld from './components/HelloWorld.vue'
     import * as THREE from 'three'
-
+import State from ''
 
     export default {
         // elm:'#app',
