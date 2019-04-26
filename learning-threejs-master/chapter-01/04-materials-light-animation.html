@@ -4,9 +4,9 @@
 
 <head>
     <title>Example 01.04 - Materials, light and animation</title>
-    <script type="text/javascript" src="../libs/three.js"></script>
+    <!--<script type="text/javascript" src="../libs/three.js"></script>-->
 
-    <script type="text/javascript" src="../libs/stats.js"></script>
+    <!--<script type="text/javascript" src="../libs/stats.js"></script>-->
     <style>
         body {
             /* set margin to 0 and overflow to hidden, to go fullscreen */
@@ -24,9 +24,11 @@
 </div>
 
 <!-- Javascript code that runs our Three.js examples -->
-<script type="text/javascript">
+<script type="module">
 
     // once everything is loaded, we run our Three.js stuff.
+    import Stats from '../libs/stats.js'
+    import THREE from '../libs/three.js'
     function init() {
 
         var stats = initStats();
@@ -72,6 +74,9 @@
 
         // add the cube to the scene
         scene.add(cube);
+
+        var axes = new THREE.AxisHelper(20);
+        scene.add(axes);
 
         var sphereGeometry = new THREE.SphereGeometry(4, 20, 20);
         var sphereMaterial = new THREE.MeshLambertMaterial({color: 0x7777ff});
